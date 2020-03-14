@@ -10,7 +10,7 @@
             "email": "patryk181299@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stab",
     "prefer-stable": true,
     "require": {},
     "autoload" : {
