@@ -1,0 +1,21 @@
+{
+    "name": "pprusino/zend_router",
+    "version": "1.0.0",
+    "description": "Zend Router for create REST API.",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patryk Prusinowski",
+            "email": "patryk181299@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload" : {
+      "classmap": [
+        "Zend_Contoller_Router_Rest_Route_Static.php",
+        "Zend_Contoller_Router_Rest_Route.php",
+      ]
+    }
+}
