@@ -1,5 +1,5 @@
 {
-    "name": "prusinowsky/zend_router",
+    "name": "Prusinowsky/Zend_Router",
     "version": "1.0.0",
     "description": "Zend Router for create REST API.",
     "type": "package",
