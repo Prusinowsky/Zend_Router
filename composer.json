@@ -1,5 +1,5 @@
 {
-    "name": "pprusino/zend_router",
+    "name": "prusinowsky/zend_router",
     "version": "1.0.0",
     "description": "Zend Router for create REST API.",
     "type": "package",
@@ -15,7 +15,7 @@
     "autoload" : {
       "classmap": [
         "Zend_Contoller_Router_Rest_Route_Static.php",
-        "Zend_Contoller_Router_Rest_Route.php",
+        "Zend_Contoller_Router_Rest_Route.php"
       ]
     }
 }
