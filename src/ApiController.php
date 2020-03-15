@@ -20,17 +20,17 @@ class ApiController extends Zend_Controller_Action {
       return;
     }
 
-    public function responseSuccess($data) {
+    public function responseSuccess($data, $status = false) {
         return $this->responseJson([
           'success' => true,
           'data' => $data
-        ], 200);
+        ], $status ? $status : 200);
     }
 
-    public function responseError($errors) {
+    public function responseError($errors, $status = false) {
         return $this->responseJson([
           'succes' => false,
           'errors' => $errors
-        ], 400);
+        ], $status ? $status : 400);
     }
 }
