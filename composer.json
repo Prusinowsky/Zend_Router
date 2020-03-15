@@ -1,6 +1,5 @@
 {
     "name": "prusinowsky/zend_router",
-    "version": "4.0.0",
     "description": "Zend Router for create REST API.",
     "type": "library",
     "license": "MIT",

@@ -10,6 +10,11 @@ class RouterCollector {
 
   }
 
+  public function hostname($path, $callback){
+    $this->pushRoute('all', 'HOSTNAME', $path, $this->formatCallback($callback));
+    return $this;
+  }
+
   public function any($path, $callback){
     return $this->match(['get', 'post', 'put', 'patch', 'delete'], $path, $callback);
   }
@@ -32,6 +37,12 @@ class RouterCollector {
 
   public function delete($path, $callback){
     return $this->match(['delete'], $path, $callback);
+  }
+
+  public function group($callback){
+    $this->_routesParms[\count($this->_routesParms)-1]['chains']
+      = $callback(new RouterCollector())->getRoutes();
+    return $this;
   }
 
   public function match(
@@ -62,7 +73,7 @@ class RouterCollector {
 
   protected function pushRoute($method, $type, $path, $callback){
     $this->_routesParms[] = [
-      'name' => "route".(self::$counter++),
+      'name' => "route-".(self::$counter++),
       'method' => $method,
       'type' => $type,
       'path' => $path,
