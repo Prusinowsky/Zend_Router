@@ -15,9 +15,19 @@ class ApiController extends Zend_Controller_Action {
       $this->getResponse()
          ->setHeader('Content-Type', 'application/json');
 
+      $this->getResponse()
+         ->setHeader('Access-Control-Allow-Origin', isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '*');
+
+      $this->getResponse()
+            ->setHeader('Access-Control-Allow-Credentials', 'true');
+
       echo Zend_Json::encode($data);
 
       return;
+    }
+
+    public function payload(){
+      return Zend_Json::decode($this->getRequest()->getRawBody());
     }
 
     public function responseSuccess($data, $status = false) {
