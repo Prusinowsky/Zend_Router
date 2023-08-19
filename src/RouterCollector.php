@@ -46,7 +46,7 @@ class RouterCollector {
   }
 
   public function match(
-    $methods = ['get', 'post', 'put', 'patch', 'delete'] , $path, $callback
+    $methods, $path, $callback
   ){
     $methods = $this->getMethods($methods);
     foreach ($methods as $method) {
